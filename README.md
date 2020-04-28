@@ -59,6 +59,24 @@ se precisar fechar uma janela aberta apos outra ser aberta
   </code>
 </pre>
 
+caso queira selecionar algum conteudo adicionado pode fazer assim 
+
+<pre>
+  <code>
+      import $jan from "/caminho/jan.js" //caminho é o caminho até o arquivo 
+      var $home = $jan();
+      var $contacts = $jan();
+      var $about = $jan();
+      
+      $home.show();
+      $home.append("<button class='btn-teste'>Olá mundo</button>")//inserindo conteudo em $home
+      $home.DOM(".btn-teste").click(()={
+        //comando que deseja executar
+      })
+  </code>
+</pre>
+voce poderá usufluir de todos os comandos jquery 
+como click, mouseOut, moseover e outros
 <h2>Usando</h2>
 incluir em seu projeto é so baixa-lo e incluir em seu projeto como um modulo js
 exemplo 
