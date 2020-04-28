@@ -9,7 +9,7 @@
  * mais exemplos são encontrados na documentação
  */
 
-export default function $window(){
+export default function $jan(){
     let idJanela = 'JA'+parseInt(Math.random()*2000);
     let self = {
         name               :"",
@@ -63,14 +63,38 @@ export default function $window(){
         toolBArHide   :()=>{
                             $(".janelas#"+self.id+" > .cabecalho-janelas").hide()
         },
-        hide          : function(){
-                            $('#'+self.id).hide('slow');
+        /**
+         * Com esta função você pode navegar na dom de sua janela e ainda 
+         * aproveitar todos os recursos oferecidos pelo jquery
+         * 
+         * @param pamram - identificador css do elemento dentro da dom de sua janela
+         * ex. dentro da sua janela tem um <button class="btn1">btn 1</button>
+         * voce poderá seleciona-lo como se fosse com jquery. poderá fazer assim 
+         * $minha_janela.dom(".btn1").click((){
+         *  //instrução a ser executada
+         * })
+         */
+        DOM            :(param='')=>{
+            console.log(param);
+            return $("#"+self.id+" > .painel > "+param);
         },
-        show : function(val){
+        /**
+         * Função responsavel por minimisar a janela do aplicativo
+         * se a janela estiver espandida esta minimizara imediatamente
+         * @param param iguais a do jquery ex. slow que deixa mais suave o fechamento
+         */
+        hide          : function(param=''){
+                            $('#'+self.id).hide(param);
+        },
+        /**
+         * Função responsavel por exibir a janela do app
+         * @param param iguais a do jquery ex. slow que deixa a abertura um pouco mais suave
+         */
+        show : function(param=''){
             if(!$('#'+self.id).length){//caso seja a primeira vez chame o construct
                 self.construct();
             }
-            $('#'+self.id).show('slow'); 
+            $('#'+self.id).show(param); 
     
         },
         /** 
