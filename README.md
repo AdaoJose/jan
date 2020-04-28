@@ -69,7 +69,7 @@ caso queira selecionar algum conteudo adicionado pode fazer assim
       var $about = $jan();
       
       $home.show();
-      $home.append("<button class='btn-teste'>Olá mundo</button>")//inserindo conteudo em $home
+      $home.append("&ltbutton class='btn-teste'&gt Olá mundo &lt/button&gt")//inserindo conteudo em $home
       $home.DOM(".btn-teste").click(()={
         //comando que deseja executar
       })
